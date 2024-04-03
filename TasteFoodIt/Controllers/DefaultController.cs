@@ -36,9 +36,13 @@ namespace TasteFoodIt.Controllers
         }
         public PartialViewResult PartialSlider()
         {
+            var values = context.Sliders.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult AboutPartial()
+        {
             return PartialView();
         }
-
         public PartialViewResult PartialAbout()
         {
             ViewBag.title = context.Abouts.Select(x => x.Title).FirstOrDefault();
@@ -46,7 +50,6 @@ namespace TasteFoodIt.Controllers
             ViewBag.image = context.Abouts.Select(x => x.ImageUrl).FirstOrDefault();
             return PartialView();
         }
-
         public PartialViewResult PartialMenu()
         {
             var values = context.Products.ToList();
@@ -54,11 +57,33 @@ namespace TasteFoodIt.Controllers
         }
         public PartialViewResult PartialTestimonial()
         {
-            return PartialView();
+            var values = context.Testimonials.ToList();
+            return PartialView(values);
         }
         public PartialViewResult PartialChef()
         {
+            var values = context.Chefs.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult PartialReservationDefault()
+        {
             return PartialView();
         }
+        public PartialViewResult PartialOpenDayHour()
+        {
+            var values = context.OpenDayHours.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult PartialInstagram()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialNewSletter()
+        {
+            return PartialView();
+        }
+
+
+
     }
 }

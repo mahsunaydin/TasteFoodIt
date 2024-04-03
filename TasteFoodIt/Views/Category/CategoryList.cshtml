@@ -5,6 +5,7 @@
 }
 
 
+
 <div class="container-fluid" id="container-wrapper">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Kategori Listesi</h1>
@@ -20,13 +21,15 @@
             <!-- Simple Tables -->
             <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Simple Tables</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Kategori Tablosu</h6>
+                    <a href="/Category/CreateCategory" style="margin-left:15px; margin-top:25px;" class="btn btn-primary">Yeni Kategori Girişi</a>
                 </div>
-                <div class="table-responsive">
-                    <table class="table align-items-center table-flush">
+
+                <div class="table-responsive p-3">
+                    <table class="table align-items-center table-flush" id="tblx">
                         <thead class="thead-light">
                             <tr>
-                                <th>Kategori Id</th>
+                                <th>#</th>
                                 <th>Kategori Adı</th>
                                 <th>Kategori Ait Ürünler</th>
                                 <th>Sil</th>
@@ -39,14 +42,14 @@
                                 <tr>
                                     <td>@item.CategoryId</td>
                                     <td>@item.CategoryName</td>
-                                    <td><a href="#" class="btn btn-sm btn-warning">Kategoriye Ait Ürünler</a></td>
+                                    <td><a href="#" class="btn btn-sm btn-primary">Kategoriye Ait Ürünler</a></td>
                                     <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-sm btn-danger">Kategoriyi Sil</a></td>
-                                    <td><a href="/Category/UpdateCategory/@item.CategoryId" class="btn btn-sm btn-success">Güncelle</a></td>
+                                    <td><a href="/Category/UpdateCategory/@item.CategoryId" class="btn btn-sm btn-warning">Güncelle</a></td>
                                 </tr>
                             }
                         </tbody>
                     </table>
-                    <a href="/Category/CreateCategory" class="btn btn-primary">Yeni Kategori Girişi</a>
+                   
                 </div>
                 <div class="card-footer"></div>
             </div>

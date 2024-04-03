@@ -128,23 +128,57 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\TasteContext.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AddressController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
+    <Compile Include="Controllers\AdminReservationController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ChefController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DashboarController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NotificationController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\ReservationController.cs" />
+    <Compile Include="Controllers\ReservationsChart.cs" />
     <Compile Include="Entities\About.cs" />
     <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\Admin.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Chef.cs" />
     <Compile Include="Entities\Contact.cs" />
+    <Compile Include="Entities\Notification.cs" />
     <Compile Include="Entities\OpenDayHour.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Reservation.cs" />
+    <Compile Include="Entities\Slider.cs" />
     <Compile Include="Entities\Testimonial.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402271914369_mig1.cs" />
+    <Compile Include="Migrations\202402271914369_mig1.designer.cs">
+      <DependentUpon>202402271914369_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402291727537_mig2.cs" />
+    <Compile Include="Migrations\202402291727537_mig2.designer.cs">
+      <DependentUpon>202402291727537_mig2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403051711432_mig3.cs" />
+    <Compile Include="Migrations\202403051711432_mig3.designer.cs">
+      <DependentUpon>202403051711432_mig3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403051740302_mig4.cs" />
+    <Compile Include="Migrations\202403051740302_mig4.designer.cs">
+      <DependentUpon>202403051740302_mig4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403132021234_mig5.cs" />
+    <Compile Include="Migrations\202403132021234_mig5.designer.cs">
+      <DependentUpon>202403132021234_mig5.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -158,6 +192,27 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="pictures\adanaKebap.jpeg" />
+    <Content Include="pictures\cevizliEvBaklavasi.jpg" />
+    <Content Include="pictures\etKavurma.jpg" />
+    <Content Include="pictures\firinSutlac.jpg" />
+    <Content Include="pictures\gullac.jpeg" />
+    <Content Include="pictures\havucDilimiBaklava.jpg" />
+    <Content Include="pictures\karisikPizza.jpg" />
+    <Content Include="pictures\koriSosluTavuk.jpeg" />
+    <Content Include="pictures\lahmacun.jpeg" />
+    <Content Include="pictures\logo.png" />
+    <Content Include="pictures\logo2.png" />
+    <Content Include="pictures\makarna.jpg" />
+    <Content Include="pictures\midyeBaklava.jpg" />
+    <Content Include="pictures\musteri1.jpg" />
+    <Content Include="pictures\musteri2.jpg" />
+    <Content Include="pictures\musteri3.jpg" />
+    <Content Include="pictures\muzluMagnolya.jpeg" />
+    <Content Include="pictures\pirincPilavi.jpeg" />
+    <Content Include="pictures\ss.png" />
+    <Content Include="pictures\tavukSote.jpg" />
+    <Content Include="pictures\urfaKebap.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -4771,6 +4826,25 @@
     <Content Include="Views\Category\CreateCategory.cshtml" />
     <Content Include="Views\Category\UpdateCategory.cshtml" />
     <Content Include="Views\ErrorPage\Page404.cshtml" />
+    <Content Include="Views\Product\ProductList.cshtml" />
+    <Content Include="Views\Product\CreateProduct.cshtml" />
+    <Content Include="Views\Product\UpdateProduct.cshtml" />
+    <Content Include="Views\Notification\NotificationList.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Default\PartialReservationDefault.cshtml" />
+    <Content Include="Views\Address\AddressList.cshtml" />
+    <Content Include="Views\Address\CreateAddress.cshtml" />
+    <Content Include="Views\Address\UpdateAddress.cshtml" />
+    <Content Include="Views\About\AboutList.cshtml" />
+    <Content Include="Views\Reservation\ReservationList.cshtml" />
+    <Content Include="Views\Reservation\UpdateReservation.cshtml" />
+    <Content Include="Views\Default\PartialOpenDayHour.cshtml" />
+    <Content Include="Views\Default\PartialInstagram.cshtml" />
+    <Content Include="Views\Default\PartialNewSletter.cshtml" />
+    <Content Include="Views\Default\AboutPartial.cshtml" />
+    <Content Include="Views\Dashboar\DashboarList.cshtml" />
+    <Content Include="Views\Dashboar\DashboarTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -4778,6 +4852,9 @@
     <Folder Include="Templates\ruang-admin\.git\objects\info\" />
     <Folder Include="Templates\ruang-admin\.git\objects\pack\" />
     <Folder Include="Templates\ruang-admin\.git\refs\tags\" />
+    <Folder Include="Views\AdminReservation\" />
+    <Folder Include="Views\Chef\" />
+    <Folder Include="Views\Contact\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -4791,6 +4868,23 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202402271914369_mig1.resx">
+      <DependentUpon>202402271914369_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402291727537_mig2.resx">
+      <DependentUpon>202402291727537_mig2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403051711432_mig3.resx">
+      <DependentUpon>202403051711432_mig3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403051740302_mig4.resx">
+      <DependentUpon>202403051740302_mig4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403132021234_mig5.resx">
+      <DependentUpon>202403132021234_mig5.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
