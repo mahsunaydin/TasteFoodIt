@@ -1,0 +1,214 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="container-fluid" id="container-wrapper">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./">Ana Sayfa</a></li>
+            <li class="breadcrumb-item">Dashboard</li>
+            <li class="breadcrumb-item active" aria-current="page">Detaylı Bakış</li>
+        </ol>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card h-100 shadow-sm border-left-primary">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1 text-primary">Kategori Sayısı</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.v1</div>
+                            <div class="mt-2 mb-0 text-muted text-xs">
+                                <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                                <span>Geçen aya göre</span>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-folder fa-2x text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card h-100 shadow-sm border-left-success">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1 text-success">Ürün Sayısı</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.v2</div>
+                            <div class="mt-2 mb-0 text-muted text-xs">
+                                <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
+                                <span>Yeni eklenenler</span>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-shopping-cart fa-2x text-success"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card h-100 shadow-sm border-left-info">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1 text-info">Şef Sayısı</div>
+                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">@ViewBag.v3</div>
+                            <div class="mt-2 mb-0 text-muted text-xs">
+                                <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 20.4%</span>
+                                <span>Aktif kadro</span>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-info"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card h-100 shadow-sm border-left-warning">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1 text-warning">Aktif Rezervasyonlar</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.v4</div>
+                            <div class="mt-2 mb-0 text-muted text-xs">
+                                <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
+                                <span>Bugün bekleyen</span>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar-check fa-2x text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-8 col-lg-7 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-white">
+                    <h6 class="m-0 font-weight-bold text-primary">Rezervasyon Trendi (Aylık)</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-area" style="position: relative; height:320px;">
+                        <canvas id="myAreaChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-5 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-white">
+                    <h6 class="m-0 font-weight-bold text-primary">Kategorilere Göre Ürün Oranı</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-pie pt-4 pb-2" style="position: relative; height:240px;">
+                        <canvas id="myPieChart"></canvas>
+                    </div>
+                    <div class="mt-4 text-center small">
+                        <span class="mr-2"><i class="fas fa-circle text-primary"></i> Ana Yemek</span>
+                        <span class="mr-2"><i class="fas fa-circle text-success"></i> Tatlılar</span>
+                        <span class="mr-2"><i class="fas fa-circle text-info"></i> İçecekler</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 1. Sol Grafik: Alan Grafiği (Line/Area Chart)
+    var ctxArea = document.getElementById("myAreaChart").getContext('2d');
+
+    // Arka plana şık bir degrade (gradient) rengi verelim
+    var gradientFill = ctxArea.createLinearGradient(0, 0, 0, 400);
+    gradientFill.addColorStop(0, 'rgba(78, 115, 223, 0.5)');
+    gradientFill.addColorStop(1, 'rgba(78, 115, 223, 0.05)');
+
+    var myAreaChart = new Chart(ctxArea, {
+        type: 'line',
+        data: {
+            labels: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos"],
+            datasets: [{
+                label: "Rezervasyonlar",
+                lineTension: 0.3, // Eğrilik derecesi
+                backgroundColor: gradientFill,
+                borderColor: "rgba(78, 115, 223, 1)",
+                pointRadius: 3,
+                pointBackgroundColor: "rgba(78, 115, 223, 1)",
+                pointBorderColor: "rgba(78, 115, 223, 1)",
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+                pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+                pointHitRadius: 10,
+                pointBorderWidth: 2,
+                data: [45, 59, 80, 81, 96, 120, 145, 130], // Buraya test datası girdim
+                fill: true
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false // Üstteki etiketi gizle
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false,
+                        drawBorder: false
+                    }
+                },
+                y: {
+                    ticks: {
+                        maxTicksLimit: 5
+                    },
+                    grid: {
+                        color: "rgb(234, 236, 244)",
+                        zeroLineColor: "rgb(234, 236, 244)",
+                        drawBorder: false,
+                        borderDash: [2],
+                        zeroLineBorderDash: [2]
+                    }
+                }
+            }
+        }
+    });
+
+    // 2. Sağ Grafik: Halka Grafiği (Doughnut Chart)
+    var ctxPie = document.getElementById("myPieChart").getContext('2d');
+    var myPieChart = new Chart(ctxPie, {
+        type: 'doughnut',
+        data: {
+            labels: ["Ana Yemek", "Tatlılar", "İçecekler"],
+            datasets: [{
+                data: [55, 25, 20], // Yüzdelik oranlar
+                backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+                hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+                hoverBorderColor: "rgba(234, 236, 244, 1)",
+            }],
+        },
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            cutout: '80%', // Halkanın iç boşluk kalınlığı
+        },
+    });
+</script>

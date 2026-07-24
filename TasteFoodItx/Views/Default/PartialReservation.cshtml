@@ -1,0 +1,71 @@
+﻿
+
+<div class="col-sm-4 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
+    <form method="post" action="/Default/PartialReservation" class="appointment-form">
+        <h3 class="mb-3">Rezervasyon Yapın</h3>
+
+        @if (TempData["RezervasyonSonuc"] != null)
+        {
+            <script>
+        // Sayfa yüklenir yüklenmez ekrana pop-up mesajı çıkartır
+        alert("@Html.Raw(TempData["RezervasyonSonuc"])");
+            </script>
+        }
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="text" name="Name" class="form-control" placeholder="Adınız Soyadınız">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="email" name="Email" class="form-control" placeholder="Email">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="text" name="Phone" class="form-control" placeholder="Telefon No">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="input-wrap">
+                        <div class="icon"><span class="fa fa-calendar"></span></div>
+                        <input type="text" name="ReservationDate" class="form-control book_date" placeholder="Rezervasyon Tarihi">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="input-wrap">
+                        <div class="icon"><span class="fa fa-clock-o"></span></div>
+                        <input type="text" name="Time" class="form-control book_time" placeholder="Rezervasyon Saati">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="form-field">
+                        <div class="select-wrap">
+                            <div class="icon"><span class="fa fa-chevron-down"></span></div>
+                            <select name="GuestCount" id="" class="form-control">
+                                <option value="0" style="background-color:gray">Misafir Sayısı</option>
+                                <option value="1" style="background-color:gray">1</option>
+                                <option value="2" style="background-color:gray">2</option>
+                                <option value="3" style="background-color:gray">3</option>
+                                <option value="4" style="background-color:gray">4</option>
+                                <option value="5" style="background-color:gray">5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="submit" value="Yerinizi Şimdi Ayırtın" class="btn btn-white py-3 px-4">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

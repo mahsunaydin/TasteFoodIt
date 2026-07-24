@@ -1,0 +1,62 @@
+﻿@model List<TasteFoodItx.Entities.Address>
+
+@{
+    ViewBag.Title = "AddressList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container-fluid" id="container-wrapper">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Adres Listesi</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./">Ana Sayfa</a></li>
+            <li class="breadcrumb-item">Adresler</li>
+            <li class="breadcrumb-item active" aria-current="page">Adres İşlemleri</li>
+        </ol>
+    </div>
+
+
+    @if (ViewBag.v < 3)
+    {<div class="alert alert-primary">
+            <a href="/Address/CreateAddress/" class="btn btn-primary">Yeni Adres Ekle</a>
+     </div>
+    }
+
+
+    <div class="row">
+        <div class="col-lg-12 mb-4">
+            <div class="card">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Adres ID</th>
+                                <th>Telefon</th>
+                                <th>Email</th>
+                                <th>Gün Saat Tanımı</th>
+                                <th>Güncelle</th>
+                                <th>Sil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.AddressId</td>
+                                    <td>@item.Phone</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.Description</td>
+                                    <td><a href="/Address/DeleteAddress/@item.AddressId/" class="btn btn-danger">Adresi Sil</a></td>
+                                    <td><a href="/Address/UpdateAddress/@item.AddressId/" class="btn btn-success">Adresi Güncelle</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer"></div>
+            </div>
+        </div>
+</div>
+

@@ -1,0 +1,51 @@
+﻿@model TasteFoodItx.Entities.Slider
+
+@{
+    ViewBag.Title = "UpdateSlider";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container-fluid" id="container-wrapper">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Slider Güncelleme Sayfası</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./">Ana Sayfa</a></li>
+            <li class="breadcrumb-item">Sliderler</li>
+            <li class="breadcrumb-item active" aria-current="page">Slider İşlemleri</li>
+        </ol>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- Form Basic -->
+            <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Slider Güncelleme Paneli</h6>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <input type="hidden" name="SliderId" value="@Model.SliderId" />
+                            <label>Başlık</label>
+                            <input type="text" name="Title" class="form-control" placeholder="Başlık Giriniz" value="@Model.Title" />
+                            <br />
+                            <label>Slogan</label>
+                            <input type="text" name="Header" class="form-control" placeholder="Sloganı Giriniz" value="@Model.Header" />
+                            <br />
+                            <label>Alt Slogan</label>
+                            <input type="text" name="Subheader" class="form-control" placeholder="Alt Sloganı Giriniz" value="@Model.Subheader" />
+                            <br />
+                            <label>Görsel Linki (opsiyonel)</label>
+                            <input type="text" name="ImageUrl" class="form-control" placeholder="Görsel Yolunu Giriniz" value="@Model.ImageUrl" />
+                            <br />
+                            <label>Bilgisayardan Görsel Seç (opsiyonel)</label>
+                            <input type="file" name="ImageFile" class="form-control" accept="image/*" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Slideri Güncelle</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

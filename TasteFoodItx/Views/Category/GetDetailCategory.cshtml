@@ -1,0 +1,68 @@
+﻿@model IEnumerable<TasteFoodItx.Entities.Product>
+
+@{
+    ViewBag.Title = "GetDetailCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container-fluid" id="container-wrapper">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">@ViewBag.kategoriAdi Kategorisine Ait Ürünlerin Listesi</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Ana Sayfa</a></li>
+            <li class="breadcrumb-item">Kategoriler</li>
+            <li class="breadcrumb-item active" aria-current="page">Kategori İşlemleri</li>
+        </ol>
+    </div>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="row">
+            <div class="col-lg-12 mb-4">
+                <div class="card">
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    </div>
+                    <div class="table-responsive">
+
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Ürün ID</th>
+                                    <th>Ürün Adı</th>
+                                    <th>Ürün Kategorisi</th>
+                                    <th>Ürün Fiyat</th>
+                                    <th>Ürün Görsel</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.ProductId</td>
+                                        <td>@item.ProductName</td>
+                                        <td>@item.Category.CategoryName</td>
+                                        <td>@item.Price</td>
+                                        <td><img src="@item.ImageUrl" style="width:100px; height:85px;" /></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <div class="card-footer"></div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger">Bu kategoriye ait ürün bulunmamaktadır.</div>
+    }
+
+    <a href="/Category/CategoryList" class="btn btn-primary">Kategorilere Geri Dön</a>
+
+</div>
+
+
+

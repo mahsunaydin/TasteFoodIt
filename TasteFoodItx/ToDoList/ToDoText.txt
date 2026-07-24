@@ -1,0 +1,10 @@
+﻿Rezervasyon yapılacak
+Session - Admin olacak
+Code firstte tablo silme
+
+
+
+
+----
+10.ders hoca beklentileri
+kalan sayfaların tamamlanması istendi ama chef sayfasını ben yapayım dedi, tek istediği ana sayfanın kalan kısımlarını partiallara ayırın diyor,
